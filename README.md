@@ -105,3 +105,14 @@ const myConcat = (arr1, arr2) => arr1.concat(arr2);
 
 - you can even remove the brackets for the parameters if it's a single parameter function.
 - ```arr1.concat(arr2)``` can also be achieved by ```[...arr1, ...arr2]```, which is called the spread operator.
+
+### Default parameters
+
+- You can set default parameters for function in cases where the parameters are not specified.
+
+```JS
+const greeting = (name = "Anonymous") => "Hello " + name;
+```
+
+- ```console.log(greeting("Josh"));``` will display "Hello Josh", whereas ```console.log(greeting())``` will display "Hello Anonymous".
+- You can set as many default values for as many parameters as needed.

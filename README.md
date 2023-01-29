@@ -116,3 +116,21 @@ const greeting = (name = "Anonymous") => "Hello " + name;
 
 - ```console.log(greeting("Josh"));``` will display "Hello Josh", whereas ```console.log(greeting())``` will display "Hello Anonymous".
 - You can set as many default values for as many parameters as needed.
+
+### Rest Parameters
+
+- Rest parameters allow you to create functions that take a variable number of arguments, which are stored in an array that can be recalled from the function later.
+
+```JS
+const sum = (x, y, z) => {
+    const args = [x, y, z];
+    return args.reduce((a, b) => a + b, 0);
+}
+```
+
+- Using rest parameters, the above code can be written as shown below. 
+
+``` const sum (...args) => {
+      return args.reduce((a, b) => a + b, 0);
+}
+```

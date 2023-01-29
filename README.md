@@ -1,6 +1,8 @@
 # ES6 - ECMAScript
 
 ## FCC - ES6 module learning journal
+This is the first time going through the ES6 module. There will be concepts and areas that I will not fully understand during the first cycle.
+I will have to cycle through this module a few more times and add to the notes as I get more acquainted with ES6.
 
 ### Variable scope
 

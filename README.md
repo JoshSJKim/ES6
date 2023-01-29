@@ -54,7 +54,7 @@ editInPlace();
 
 #### Object Freeze
 
-- Prevent object data mutation by applying Object.freeze('object_name')
+- Prevent object data mutation by applying ```Object.freeze('object_name');```
 
 ```JS
 const MATH_CONSTANTS = {
@@ -119,7 +119,7 @@ const greeting = (name = "Anonymous") => "Hello " + name;
 - ```console.log(greeting("Josh"));``` will display "Hello Josh", whereas ```console.log(greeting())``` will display "Hello Anonymous".
 - You can set as many default values for as many parameters as needed.
 
-### Rest Parameters
+### Rest Parameters (requires further understanding)
 
 - Rest parameters allow you to create functions that take a variable number of arguments, which are stored in an array that can be recalled from the function later.
 

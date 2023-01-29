@@ -20,7 +20,7 @@ function checkScope() {
 - ```let i = 'block scope';``` applies only within the if statement block, hence the term 'block scope'.
 - ```let i = 'function scope';``` applies within the entire function, with the exception of the if statement block, where the 'i' variable is declared separately, hence the term 'function scope'.
 
-#### Mutate an array declared with const
+### Mutate an array declared with const
 
 - Edit the array [5, 7, 2] to [2, 5, 7]
 - There are various ways to achieve this. You could manually assign new values to each element of the array by indexing the array. I think this is the intended method for this exercise.
@@ -59,4 +59,29 @@ const MATH_CONSTANTS = {
     PI: 3.14
 };
 Object.freeze(MATH_CONSTANTS);
+```
+### Arrow function
+
+- Use arrow (=>) function to simplify multi-line functions to a single in-line function. This is useful when passing a function as an argument to another function.
+
+```JS
+const myFunc = function() {
+    const myVar = "value";
+    return myVar;
+}
+``` 
+
+- The above code can be simplified by replacing the 'function' text to an arrow (=>) behind the brackets, as shown below.
+
+```JS
+const myFunc = () => {
+    const myVar = "value";
+    return myVar;
+}
+```
+
+- If the code does not have a function body and only a return value, such as above, it can be even further simplified by removing the 'return' keyword, as well as the curly braces surrounding the code.
+
+```JS
+const myFunc = () => "value";
 ```

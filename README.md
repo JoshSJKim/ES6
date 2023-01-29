@@ -60,6 +60,7 @@ const MATH_CONSTANTS = {
 };
 Object.freeze(MATH_CONSTANTS);
 ```
+
 ### Arrow function
 
 - Use arrow (=>) function to simplify multi-line functions to a single in-line function. This is useful when passing a function as an argument to another function.
@@ -69,7 +70,7 @@ const myFunc = function() {
     const myVar = "value";
     return myVar;
 }
-``` 
+```
 
 - The above code can be simplified by replacing the 'function' text to an arrow (=>) behind the brackets, as shown below.
 
@@ -85,3 +86,22 @@ const myFunc = () => {
 ```JS
 const myFunc = () => "value";
 ```
+
+### Arrow function with parameters
+
+- The following code can be re-written using arrow functions.
+
+```JS
+var myConcat = function(arr1, arr2) {
+  return arr1.concat(arr2);
+};
+```
+
+- use arrow function
+
+```JS
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+```
+
+- you can even remove the brackets for the parameters if it's a single parameter function.
+- ```arr1.concat(arr2)``` can also be achieved by ```[...arr1, ...arr2]```, which is known as the spread operator.

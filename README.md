@@ -104,4 +104,4 @@ const myConcat = (arr1, arr2) => arr1.concat(arr2);
 ```
 
 - you can even remove the brackets for the parameters if it's a single parameter function.
-- ```arr1.concat(arr2)``` can also be achieved by ```[...arr1, ...arr2]```, which is known as the spread operator.
+- ```arr1.concat(arr2)``` can also be achieved by ```[...arr1, ...arr2]```, which is called the spread operator.

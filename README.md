@@ -52,7 +52,7 @@ editInPlace();
 
 #### Object Freeze
 
-- Prevent data mutation by applying Object.freeze('object_name')
+- Prevent object data mutation by applying Object.freeze('object_name')
 
 ```JS
 const MATH_CONSTANTS = {

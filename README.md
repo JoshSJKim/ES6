@@ -49,3 +49,14 @@ editInPlace();
 - s.pop() will remove the last element of the array.
 - s.unshift(2) will enter the value '2' to the first element of the array (index[0]).
 - There may be other methods to achieve this, but these are the only two that I know.
+
+#### Object Freeze
+
+- Prevent data mutation by applying Object.freeze('object_name')
+
+```JS
+const MATH_CONSTANTS = {
+    PI: 3.14
+};
+Object.freeze(MATH_CONSTANTS);
+```

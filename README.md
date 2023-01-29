@@ -1,4 +1,4 @@
-# ES6
+# ES6 - ECMAScript
 
 ## FCC - ES6 module learning journal
 

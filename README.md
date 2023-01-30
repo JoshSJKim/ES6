@@ -178,3 +178,27 @@ const { today, tomorrow } = HIGH_TEMPERATURES;
 
 - ```console.log(today);``` will display '77', and ```console.log(tomorrow);``` will display '80'.
 - In both cases ```console.log(yesterday);``` will throw an error since it is not defined.
+
+### Use Destructuring assignment to assign variables from objects
+
+- Method similar to extracting values using destructuring assignment is used.
+
+```js
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77, 
+    tomorrow: 80
+};
+
+const highToday = HIGH_TEMPERATURE.today;
+const highTomorrow = HIGH_TEMPERATURE.tomorrow;
+```
+
+- while leaving the HIGH_TEMPERATURE object as is, you can assign new variables in a simpler manner, as shown below.
+
+```js
+const {today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
+```
+
+- The above code will update the object with the new variable names.
+- ```console.log(today);``` or ```console.log(tomorrow);``` will throw an error since the variable names have been newly defined.

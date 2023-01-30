@@ -107,7 +107,7 @@ const myConcat = (arr1, arr2) => arr1.concat(arr2);
 ```
 
 - you can even remove the brackets for the parameters if it's a single parameter function.
-- ```arr1.concat(arr2)``` can also be achieved by ```[...arr1, ...arr2]```, which is called the spread operator.
+- ```arr1.concat(arr2)``` can also be achieved by ```[...arr1, ...arr2]```, which is called the spread operator (covered later in the module).
 
 ### Default parameters
 
@@ -226,3 +226,53 @@ const {today: {low: lowToday, high: highToday}} = LOCAL_FORECAST;
 
 - Anything other than 'lowToday' or 'highToday' for ```console.log();``` will throw an error since they are not defined.
 - Assign alternate variables for 'yesterday' and 'tomorrow' in the same manner to avoid errors.
+
+### Use destructuring assignment to assign variables from Arrays
+
+See the example below.
+
+```js
+const [a, b] = [1, 2, 3, 4, 5];
+console.log(a, b);
+```
+
+- The above code will display the values of a and b as 1 and 2. ```console.log(a, b, c, d, e);``` will display '1, 2, 3, 4, 5'.
+
+See the next example to see how destructuring assignment allows you to pick and choose which elements to assign to which variables.
+
+```js
+const [a, b,,, c] = [1, 2, 3, 4, 5];
+console.log(a, b,,, c);
+```
+
+- In the code above, commas are used to access a desired value at any index. ```console.log(a, b,,, c);``` will display '1, 2, 5'.
+
+I had a bit of trouble understanding the logic of the following exercise.
+
+- Use destructuring assignment to swap the values of a and b so that the value of a becomes the value of b, and vise versa.
+  
+```js
+let a = 8, b = 6;
+```
+
+I initially made the mistake of attempting to re-declare the variables.
+
+```js
+const [a, b] = [6, 8]; // This is incorrect. It will throw an error saying that identifiers are already declared.
+```
+
+The correct solution is shown below.
+
+```js
+[a, b] = [b, a];
+```
+
+- I didn't quite understand this at first because both sides are using variables, not values.
+- Since the values of a and b have already been declared (let a=8, b=6), we can assume that the above code actually looks like this.
+
+```js
+[8, 6] = [b, a];
+```
+
+- Which is essentially reassigning the declared values of a and b on the left to the variables on the right, in sequential order.
+- I don't know if this logic is fully correct. But this is how I understand it at this point.

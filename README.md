@@ -202,3 +202,27 @@ const {today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
 
 - The above code will update the object with the new variable names.
 - ```console.log(today);``` or ```console.log(tomorrow);``` will throw an error since the variable names have been newly defined.
+
+### Destructure values from nested objects
+
+- use the same principles used in the two previous exercises to destructure values from nested objects.
+
+```js
+const LOCAL_FORECAST = {
+    yesterday: {low: 61, high: 75},
+    today: {low:64, high: 77},
+    tomorrow: {low:68, high: 80}
+};
+
+const lowToday = LOCAL_FORECAST.today.low;
+const highToday = LOCAL_FORECAST.today.high;
+```
+
+- The above two variable assignments can be replaced using destructuring assignments, as shown below.
+
+```js
+const {today: {low: lowToday, high: highToday}} = LOCAL_FORECAST;
+```
+
+- Anything other than 'lowToday' or 'highToday' for ```console.log();``` will throw an error since they are not defined.
+- Assign alternate variables for 'yesterday' and 'tomorrow' in the same manner to avoid errors.

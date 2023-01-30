@@ -267,7 +267,7 @@ The correct solution is shown below.
 [a, b] = [b, a];
 ```
 
-- I didn't quite understand this at first because both sides are using variables, not values.
+- I didn't quite understand this at first because both sides are using the same characters.
 - Since the values of a and b have already been declared (let a=8, b=6), we can assume that the above code actually looks like this.
 
 ```js
@@ -276,3 +276,87 @@ The correct solution is shown below.
 
 - Which is essentially reassigning the declared values of a and b on the left to the variables on the right, in sequential order.
 - I don't know if this logic is fully correct. But this is how I understand it at this point.
+
+### Destructuring via rest elements
+
+- With regards to array destructuring, there may be cases where it is necessary to collect the remainder of the elements into a separate array.
+
+A simple example is shown below
+
+```js
+const [a, b, ...arr] = [1, 2, 3, 4, 5];
+console.log(a, b);
+console.log(arr);
+```
+
+- ```console.log(a, b);``` will display 1, 2. Whereas ```console.log(arr);``` will display the remaining elements in a separate array ```[3, 4, 5]```.
+- It is important to note that the rest syntax (...) can be only used as the last variable in a list.
+- In other words, it cannot be used to catch a sub-array in the middle of an array.
+
+```js
+[a, b, ...arr, c, d] // This cannot be executed.
+```
+
+Let's take a look at a slightly more complex exercise.
+
+- Use a destructuring assignment with the rest syntax to remove the first two elements of an array.
+- 'removeFirstTwo()' should return a sub-array with the first two elements of the original array omitted.
+
+```js
+function removeFirstTwo(list) {
+    const shorterList = list; // Change this line
+    return shorterList;
+}
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
+```
+
+- Assign random variables to the first two elements of the source array (list), and use a rest syntax for 'shorterList'.
+
+```js
+const [a, b, ...shorterList] = list;
+```
+
+Add it together.
+
+```js
+function removeFirstTwo(list) {
+    const [a, b, ...shorterList] = list;
+    return shorterList;
+}
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
+
+console.log(source); // will display [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(removeFirstTwo(source)); // will display [ 3, 4, 5, 6, 7, 8, 9, 10 ]
+```
+
+- NOTE: If you wish to see the elements that are removed, ```console.log(a, b);``` should be entered just before ```return shorterList```.
+  If you attempt to log 'a' and 'b' outside of the function (outside of the curly braces of the function), it will throw an error since 'a' and 'b' are not declared in the global scope (it's within the function scope).
+
+Therefore,
+
+```js
+function removeFirstTwo(list) {
+    const [a, b, ...shorterList] = list;
+    console.log(a, b);
+    return shorterList;
+}
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
+
+console.log(source); // will display [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(removeFirstTwo(source)); // will display [ 3, 4, 5, 6, 7, 8, 9, 10 ]
+```
+
+The above will display
+
+/*1 2
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+1 2
+[ 3, 4, 5, 6, 7, 8, 9, 10 ]*/
+
+- 1 2 are repeated since the function executes for each console.log.

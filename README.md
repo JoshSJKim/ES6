@@ -154,3 +154,27 @@ arr2 = [...arr1] // This is the spread operator
 ```
 
 - ```arr2 = [...arr1]``` will 'unpack' the elements of arr1 and insert it into arr2. ```console.log(arr2);``` will display the exact same array as arr1.
+
+### Destructuring assignment to extract values from objects
+
+- Destructuring assignment is newly introduced in ES6 for purposes of simplicity and efficiency when assigning values taken directly from an object.
+
+```js
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77, 
+    tomorrow: 80
+};
+
+const today = HIGH_TEMPERATURES.today;
+const tomorrow = HIGH_TEMPERATURES.tomorrow;
+```
+
+- While leaving the object as it is, the variable assignment can be simplified, as shown below.
+
+```js
+const { today, tomorrow } = HIGH_TEMPERATURES;
+```
+
+- ```console.log(today);``` will display '77', and ```console.log(tomorrow);``` will display '80'.
+- In both cases ```console.log(yesterday);``` will throw an error since it is not defined.

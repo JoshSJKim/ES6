@@ -348,15 +348,19 @@ function removeFirstTwo(list) {
 const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const sourceWithoutFirstTwo = removeFirstTwo(source);
 
-console.log(source); // will display [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-console.log(removeFirstTwo(source)); // will display [ 3, 4, 5, 6, 7, 8, 9, 10 ]
+console.log(source);
+console.log(removeFirstTwo(source));
 ```
 
 The above will display
 
-/*1 2
+```js
+/* 
+1 2
 [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 1 2
-[ 3, 4, 5, 6, 7, 8, 9, 10 ]*/
+[ 3, 4, 5, 6, 7, 8, 9, 10 ]
+*/
+```
 
 - 1 2 are repeated since the function executes for each console.log.

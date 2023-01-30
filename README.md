@@ -1,6 +1,7 @@
 # ES6 - ECMAScript
 
 ## FCC - ES6 module learning journal
+
 This is the first time going through the ES6 module. There will be concepts and areas that I will not fully understand during the first cycle.
 I will have to cycle through this module a few more times and add to the notes as I get more acquainted with ES6.
 
@@ -122,6 +123,7 @@ const greeting = (name = "Anonymous") => "Hello " + name;
 ### Rest Parameters (requires further understanding)
 
 - Rest parameters allow you to create functions that take a variable number of arguments, which are stored in an array that can be recalled from the function later.
+- Rest parameters are used in function definitions, for example ```function sum(...args) {}``` to represent an indefinite number of arguments as an array.
 
 ```JS
 const sum = (x, y, z) => {
@@ -130,9 +132,25 @@ const sum = (x, y, z) => {
 }
 ```
 
-- Using rest parameters, the above code can be written as shown below. 
+- Using rest parameters, the above code can be written as shown below.
 
-``` const sum (...args) => {
+```JS
+const sum (...args) => {
       return args.reduce((a, b) => a + b, 0);
 }
 ```
+
+### Spread Operator
+
+- The spread operator uses the same syntax as the rest parameter ```(...)``` but in a different manner.
+- The rest parameter is used in function definitions, whereas the spread operator is used to spread, or unpack, the elements of an iterable array or string into a new array or a new string. It can also be used to spread the properties of an object.
+- It can be used in array literals, function calls, or object literals.
+
+```JS
+const arr1 = [1, 2, 3, 4, 5];
+let arr2;
+
+arr2 = [...arr1] // This is the spread operator
+```
+
+- ```arr2 = [...arr1]``` will 'unpack' the elements of arr1 and insert it into arr2. ```console.log(arr2);``` will display the exact same array as arr1.

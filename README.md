@@ -452,6 +452,7 @@ const failuresList = makeList(result.failure);
   - ```console.log(makeList(result.failure))``` will execute the function for the duration based on the parameters defined in the for loop
   - Based on the arguments passed through the function, the function will iterate through the 'failure' array in the 'results' object.
   - It will then push the elements of the array ```<li class="text-warning">${arr[i]}</li>``` to the empty array (```failureItems = []```) in sequence.
+  - ```${...}``` is the template literal syntax, which is used to embed expressions into string literals.
   - NOTE: DO NOT enter 'return' INSIDE the function scope. It will terminate the loop on its first pass and return only the first element of the array. When using a loop, the return statement must be OUTSIDE of the function to ensure that the loop iterates through the entire array specified.
 
 The solution is shown below.
@@ -567,3 +568,6 @@ const createPerson = (name , age, gender) => ({
   - Makes it easier to write functions that accept complex data structures.
 - When it is used on the right side of the arrow function
   - Allows you to extract values from an object/array and ```return``` them as an ```object literal```.
+
+### Concise declarative functions
+

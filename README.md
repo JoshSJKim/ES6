@@ -482,3 +482,77 @@ Just to go over this code verbally.
 - The function will iterate through the array specified in the argument (in the above case, it is the 'failure' property in the 'results' object) for the duration of the loop specified.
 - The values extracted from the loop are stored in the call stack.
 - It is returned to the empty 'failureItems' array with the class attribute and its value specified in the ```<li></li>``` tag when the return statement outside of the function is executed.
+
+### Write concise object literal declarations using object property shorthand
+
+- ES6 allows the use of object property shorthand which eliminates redundancy.
+
+For example
+
+```js
+const getMousePosition = (x, y) => ({
+    x: x,
+    y: y
+});
+```
+
+- When ```function getMousePosition(34, 54);``` is called, the arguments passed through the function will be assigned to the respective property.
+- The names of the argument parameters become the property name, and the arguments passed through the function becomes the values of those respective properties.
+
+But using object property shorthand makes the above code simpler.
+
+```js
+const getMousePosition = (x, y) => ({
+    x, 
+    y
+});
+```
+
+- Simply writing 'x' and 'y' once in the return portion will automatically convert it into 'x: x' and 'y: y', respectively.
+
+Another example.
+
+```js
+const createPerson = (name, age, gender) => {
+    // Only change code below this line
+    return {
+        name: name,
+        age: age,
+        gender: gender
+    };
+    // Only change code above this line
+};
+```
+
+- Following the logic of the previous example, all you need to do is remove the colons and the redundant words, like so.
+
+```js
+const createPerson = (name, age, gender) => {
+    return {    // return ({
+        name,   //      name,
+        age,    //      age,
+        gender  //      gender
+    };          // });  Both are acceptable.
+};
+```
+
+- In the above two codes, ```console.log(createPerson("Josh", 43, "male));``` will display ```{name: 'Josh', age: 42, gender: 'male'}```
+- NOTE: The curly braces in the return portion of the function can be wrapped in parentheses. It has no effect of the output. It is optional and sometimes added for clarity and improved readability.
+- NOTE: The above code format is called a 'block body syntax' of arrow function.
+  - it requires an explicit 'return' statement in order to return the object literal.
+
+There is another way to write the code above using 'concise body syntax' of arrow function.
+
+```js
+const createPerson = (name , age, gender) => ({
+    name, 
+    age,
+    gender
+});
+```
+
+- The above uses the 'concise body syntax' of arrow function.
+  - The difference is that the curly braces after the arrow function are wrapped in parentheses.
+  - it automatically returns the expression given after the '=>'
+  - it does not require a 'return' statement.
+  - it is used when a single expression is returned.

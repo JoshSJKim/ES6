@@ -92,22 +92,21 @@ const myFunc = () => "value";
 
 ### Arrow function with parameters
 
-- The following code can be re-written using arrow functions.
-
 ```JS
 var myConcat = function(arr1, arr2) {
   return arr1.concat(arr2);
 };
 ```
 
-- use arrow function
+- The above code (written using ES5 syntax) can be re-written using arrow functions.
 
 ```JS
 const myConcat = (arr1, arr2) => arr1.concat(arr2);
 ```
 
+- It takes an argument on the left side of the function (=>) and return an expression on the right side of the arrow function.
 - you can even remove the brackets for the parameters if it's a single parameter function.
-- ```arr1.concat(arr2)``` can also be achieved by ```[...arr1, ...arr2]```, which is called the spread operator (covered later in the module).
+- NOTE: ```arr1.concat(arr2)``` can also be achieved by ```[...arr1, ...arr2]```, which is called the spread operator (covered later in the module).
 
 ### Default parameters
 
@@ -364,3 +363,46 @@ The above will display
 ```
 
 - 1 2 are repeated since the function executes for each console.log.
+
+### Use destructuring assignment to pass an object as a function's parameters (requires further understanding)
+
+Use destructuring assignment within the argument to the function half to send only max and min inside the function.
+
+```js
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+// Only change code below this line
+const half = (stats) => (stats.max + stats.min) / 2.0; 
+// Only change code above this line
+```
+
+The solution to the above exercise using ES5 syntax is shown below.
+
+```js
+const half = function(stats) {
+    return (stats.max + stats.min) / 2.0;
+}
+```
+
+- ```console.log(half(stats))``` will execute the function(stats) and return the sum of the values of max and min in the stats object divided by 2, which is ```half = 28.015```.
+- Since I've been going through the basic JS module up until now, this makes more 'visual' sense to me.
+- The above exercise requires the use of destructuring.
+
+```js
+const half = ({max, min}) => (max + min) / 2.0;
+```
+
+- The above code returns the exact same result as the solution using ES5 syntax when ```console.log(half(stats))``` is called.
+- The syntax ```({max, min})``` is a shorthand for destructuring the object (stats) passed as an argument into the function, and extracting the 'max' and 'min' properties of the stats object.
+- The left side of the arrow function (=>) is the argument, and the right side of the arrow function is the return expression.
+- On the right side of the arrow function indicates what to return when ```console.log(half(stats))``` is called.
+- When called, the function will destructure the object (stats) and extract its 'max' and 'min' properties. (Left side)
+- Then it will return the sum of the values of the 'max' and 'min' properties and divide it by 2 to get the average. (Right side)
+- ```console.log(half(stats))``` will display 28.015.

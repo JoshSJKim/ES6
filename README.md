@@ -406,3 +406,79 @@ const half = ({max, min}) => (max + min) / 2.0;
 - When called, the function will destructure the object (stats) and extract its 'max' and 'min' properties. (Left side)
 - Then it will return the sum of the values of the 'max' and 'min' properties and divide it by 2 to get the average. (Right side)
 - ```console.log(half(stats))``` will display 28.015.
+
+### Create strings using template literals (requires further understanding)
+
+INSTRUCTIONS
+
+- Use template literal syntax with backticks to create an array of list element (li) strings.
+- Each list element's text should be one of the array elements from the failure property on the result object and have a class attribute with the value text-warning.
+- The makeList function should return the array of list item strings.
+
+```js
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+  // Only change code below this line
+  const failureItems = [];
+  // Only change code above this line
+
+  return failureItems;
+}
+
+const failuresList = makeList(result.failure);
+```
+
+- The above function 'makeList(arr)' already has a variable 'failureItems' declared with an empty array.
+- Use a 'for loop' to iterate through the object 'results'
+  
+  ```js
+  for (let i = 0; i < arr.length; i++) 
+  ```
+
+  - Just to recap on for loops, the above loop has variable 'i' assigned with '0'.
+  - While the index value of 'i' is less than the length of the entire array,
+  - '1' will be added to the index value of 'i' to increment through the array.
+
+  ```js
+  for (let i = 0; i < arr.length; i++) {
+    failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+  }
+  ```
+
+  - ```console.log(makeList(result.failure))``` will execute the function for the duration based on the parameters defined in the for loop
+  - Based on the arguments passed through the function, the function will iterate through the 'failure' array in the 'results' object.
+  - It will then push the elements of the array ```<li class="text-warning">${arr[i]}</li>``` to the empty array (```failureItems = []```) in sequence.
+  - NOTE: DO NOT enter 'return' INSIDE the function scope. It will terminate the loop on its first pass and return only the first element of the array. When using a loop, the return statement must be OUTSIDE of the function to ensure that the loop iterates through the entire array specified.
+
+The solution is shown below.
+
+```js
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+  // Only change code below this line
+  const failureItems = [];
+  for (let i = 0; i < arr.length; i++) {
+    failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+  }
+  // Only change code above this line
+
+  return failureItems;
+}
+
+const failuresList = makeList(result.failure);
+```
+
+Just to go over this code verbally.
+
+- When 'function makeList(arr)' is executed, it declares a variable 'failureItems' with an empty array.
+- The function will iterate through the array specified in the argument (in the above case, it is the 'failure' property in the 'results' object) for the duration of the loop specified.
+- The values extracted from the loop are stored in the call stack.
+- It is returned to the empty 'failureItems' array with the class attribute and its value specified in the ```<li></li>``` tag when the return statement outside of the function is executed.

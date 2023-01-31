@@ -571,3 +571,36 @@ const createPerson = (name , age, gender) => ({
 
 ### Concise declarative functions
 
+
+ES5 function
+
+INSTRUCTION
+
+Refactor the function setGear inside the object bicycle to use the shorthand declarative shorthand syntax.
+
+
+```js
+// Only change code below this line
+const bicycle = {
+  gear: 2,
+  setGear: function(newGear) {
+    this.gear = newGear;
+  }
+};
+// Only change code above this line
+bicycle.setGear(3);
+console.log(bicycle.gear);
+```
+
+ES6 function - allows you to remove the ```function``` keyword and the colon when defining functions in objects.
+
+```js
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {  // Remove colon and keyword 'function'
+    this.gear = newGear;
+  }
+};
+```
+
+The above two codes will display exactly the same output.

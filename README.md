@@ -537,9 +537,11 @@ const createPerson = (name, age, gender) => {
 ```
 
 - In the above two codes, ```console.log(createPerson("Josh", 43, "male));``` will display ```{name: 'Josh', age: 42, gender: 'male'}```
-- NOTE: The curly braces in the return portion of the function can be wrapped in parentheses. It has no effect of the output. It is optional and sometimes added for clarity and improved readability.
+- NOTE: The curly braces in the return portion of the function can be wrapped in parentheses.
+  - It is a technique used to indicate that the expression within the parentheses is an object and should be returned by the function.
+  - It has no effect of the output. It is optional and sometimes added for clarity and improved readability.
 - NOTE: The above code format is called a 'block body syntax' of arrow function.
-  - it requires an explicit 'return' statement in order to return the object literal.
+  - It requires an explicit 'return' statement in order to return the object literal.
 
 There is another way to write the code above using 'concise body syntax' of arrow function.
 
@@ -556,3 +558,12 @@ const createPerson = (name , age, gender) => ({
   - it automatically returns the expression given after the '=>'
   - it does not require a 'return' statement.
   - it is used when a single expression is returned.
+
+#### Side-note on Destructuring Assignment used with arrow function
+
+- Destructuring assignment is a way to extract values from arrays or objects and assign them to new variables.
+- When destructing assignment is used on the left side of the arrow function (=>)
+  - Allows you to extract values from an object/array and ```assign``` them as ```function parameters```.
+  - Makes it easier to write functions that accept complex data structures.
+- When it is used on the right side of the arrow function
+  - Allows you to extract values from an object/array and ```return``` them as an ```object literal```.

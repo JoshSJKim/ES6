@@ -571,13 +571,13 @@ const createPerson = (name , age, gender) => ({
 
 ### Concise declarative functions
 
-
-ES5 function
-
 INSTRUCTION
 
 Refactor the function setGear inside the object bicycle to use the shorthand declarative shorthand syntax.
 
+ES5 function
+
+- This code works just as it is.
 
 ```js
 // Only change code below this line
@@ -604,3 +604,67 @@ const bicycle = {
 ```
 
 The above two codes will display exactly the same output.
+
+### Use class syntax to define a constructor function (requires further understanding)
+
+- In ES6, you can create objects using the ```class``` keyword.
+- In ES5, an object can be created by defining a ```constructor``` function, and the object created is instantiated by using the ```new``` keyword.
+- In ES6, first the class is declared which uses a constructor method. It can be then invoked or "instantiated" using the keyword ```new```.
+
+There are two types of constructors. Explicit and implicit
+
+EXPLICIT
+
+- Explicit constructor is a constructor method that is defined within the class by using the 'constructor' keyword, explicitly.
+- It is then followed by a function definition, which can pass parameters of the constructor.
+- When a 'instance' of the class is created using the keyword "new", the constructor is invoked, or called.
+- The parameters passed through the function definition will then initialize the properties of the object.
+
+```js
+class SpaceShuttle {
+  constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+  }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
+  }
+```
+
+- When the above is 'instantiated' like shown below,
+
+```js
+const zeus = new SpaceShuttle('Jupiter');
+zeus.takeOff();
+```
+
+- it will invoke the ```class SpaceShuttle``` and pass 'jupiter' as its parameter 'targetPlanet'.
+- So, when the function is called ```zeus.takeOff();```, the console will display ```"To Jupiter!"```
+
+IMPLICIT
+
+- Implicit constructors do not have an explicit constructor method (```constructor('something'))```)
+- It is a default constructor that is created if no explicit constructor is defined within the class.
+- It takes no arguments/parameters and has an empty body.
+- How it behaves when it is invoked can be defined arbitrarily.
+
+```js
+class = Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+  blastOff() {
+    console.log("To Mars!");
+  }
+}
+```
+
+- When the above is instantiated using the keyword "new"
+
+```js
+const atlas = new Rocket();
+atlas.launch(); // This will print "To the moon!" in the console
+atlas.blastOff(); // This will print "To Mars!" in the console
+```
+
+- Keep in mind when defining the class, UpperCamelCase should be used.

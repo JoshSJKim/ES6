@@ -740,7 +740,8 @@ temp = thermos.temperature; // new fahrenheit value is assigned to 'this._fahren
 
 ### Use export to share a code block
 
-One way to export a code block is shown below
+One way to export a code block is shown below.
+Assume that there is a file named ```math_functions.js```
 
 ```js
 export const add = (x, y) => {  // This will export the 'add' function, which takes two arguments and return the sum of the two arguments
@@ -763,3 +764,27 @@ export { add, multiply};
 ```
 
 - When a variable or a function is exported, it can be imported in another file and use it without having to rewrite the code.
+
+### Reuse JavaScript Code using import
+
+import allows you to choose which parts of a file or module to load.
+
+```js
+import {add} from './math_functions.js';  // "import" will find 'add' in 'math_functions.js' and make it available for use.
+                                          // (./) tells the import command to look for 'math_functions.jf' file in the same folder as the current file.
+or                                        // relative file path(./) and file extension(.js) required when using import in this manner
+
+import {add, multiply} from './math_functions.js';    // multiple functions or variables can be imported using the same method.
+```
+
+### Use * to import everything from a file
+
+- ```import * as``` syntax is used to import all of the contents of the selected file in to the current file.
+
+```js
+import * as myMathModule from "./math_functions.js";
+```
+
+- The above command will import all of the exported contents from 'math_functions.js' and into an object called 'myMathModule'.
+- NOTE: Only contents that have been exported will be imported.
+- The object name (in this case, myMathModule), can be named anything. It is just a variable name.

@@ -737,3 +737,29 @@ temp = thermos.temperature; // new fahrenheit value is assigned to 'this._fahren
   </body>
 </html>
 ```
+
+### Use export to share a code block
+
+One way to export a code block is shown below
+
+```js
+export const add = (x, y) => {  // This will export the 'add' function, which takes two arguments and return the sum of the two arguments
+  return x + y;                 
+}
+```
+
+The above method is a common way to export a single function. But a different method can be used to export multiple functions.
+
+```js
+const add = (x, y) => {
+  return x + y;
+}
+
+const multiply = (x, y) => {
+  return x * y;
+}
+
+export { add, multiply};
+```
+
+- When a variable or a function is exported, it can be imported in another file and use it without having to rewrite the code.

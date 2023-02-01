@@ -668,3 +668,62 @@ atlas.blastOff(); // This will print "To Mars!" in the console
 ```
 
 - Keep in mind when defining the class, UpperCamelCase should be used.
+
+### Getters and Setters
+
+- Getter functions are used to return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
+- Setter functions are used to modify (set) the value of an object's private variable based on the value passed into the setter function.
+  - This function can involve calculations or overwriting the previous value.
+
+```js
+class Book {                // Define class, UpperCamelCase
+  constructor(author) {     // Explicit constructor
+    this._author = author;  // Conventionally, precede private variable name with an underscore.
+  }    
+  get writer() {            // This is the getter
+    return this._author;    // The value of the private variable that will be returned when the get function is called
+  }/
+  set writer(updatedAuthor) {       // This is the setter
+    this._author = updatedAuthor;   // The value of the private variable will be updated based on the argument passed.
+  }
+}
+
+const novel = new Book('anonymous');  // 'new' keyword creates an instance of the 'Book' class and passes 'anonymous' as the argument to the constructor
+console.log(novel.writer);            // This will display 'anonymous' since 'this._author' was set to 'anonymous' for 'const novel' above.
+novel.writer = 'newAuthor';           // This will pass the argument 'newAuthor' to the 'updateAuthor' parameter for 'set writer' setter function.
+console.log(novel.writer);            // This will display 'newAuthor' since 'this._author' was updated to 'newAuthor' using the setter above.
+```
+
+Getter Setter exercise
+
+INSTRUCTION
+
+- Use the class keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+- In the class, create a getter to obtain the temperature in Celsius and a setter to set the temperature in Celsius.
+- Remember that ```C = 5/9 *(F - 32)``` and ```F = C* 9.0 / 5 + 32```, where F is the value of temperature in Fahrenheit, and C is the value of the same temperature in Celsius.
+
+```js
+// Only change code below this line
+class Thermostat {                    // Define class
+  constructor (fahrenheit) {          // constructor will receive temperature value in fahrenheit
+    this._fahrenheit = fahrenheit;    // The argument passed through the parameter will be assigned to the private variable 'this._fahrenheit'
+  }
+  get temperature() {                       // getter function
+    return 5/9 * (this._fahrenheit - 32);   // This formula will convert the fahrenheit value to celcius
+  }
+  set temperature(celcius) {                            // setter function
+    return this._fahrenheit = (celcius * 9) / 5 + 32;   // This formula will convert the celcius value to fahrenheit. 
+  }                                                     // The new value is assigned to 'this._fahrenheit'.
+}
+// Only change code above this line
+
+const thermos = new Thermostat(76); // Receive argument in fahrenheit value
+let temp = thermos.temperature; // getter function is called to return value 24.44 in Celsius
+thermos.temperature = 26;   // receive celcius value and setter function is called to return 'this._fahrenheit' value in fahrenheit, which is 78.8
+temp = thermos.temperature; // new fahrenheit value is assigned to 'this._fahrenheit', which is passed through the get function to return 26 in Celsius
+```
+
+- ```console.log(thermos.temperature);``` will only display results in celcius because ```get temperature()``` is defined to return values in celcius.
+- When ```thermos.temperature``` is set to '26' in celcius, it looks like it goes straight to ```temp = thermos.temperature```.
+  - it is actually converting the celcius value to fahrenheit, returned to 'this._fahrenheit', and when called again using the get function, it is then re-converted to celcius. Then 'temp = thermos.temperature' will be '26' in celcius again.
+  - It seems redundant but it actually makes sense because the constructor is defined to receive arguments in fahrenheit.

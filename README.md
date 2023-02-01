@@ -727,3 +727,13 @@ temp = thermos.temperature; // new fahrenheit value is assigned to 'this._fahren
 - When ```thermos.temperature``` is set to '26' in celcius, it looks like it goes straight to ```temp = thermos.temperature```.
   - it is actually converting the celcius value to fahrenheit, returned to 'this._fahrenheit', and when called again using the get function, it is then re-converted to celcius. Then 'temp = thermos.temperature' will be '26' in celcius again.
   - It seems redundant but it actually makes sense because the constructor is defined to receive arguments in fahrenheit.
+
+## Create a Module Script - integrate JavaScript with HTML
+
+```html
+<html>
+  <body>
+    <script type="module" src="filename.js"></script>
+  </body>
+</html>
+```

@@ -740,6 +740,7 @@ temp = thermos.temperature; // new fahrenheit value is assigned to 'this._fahren
 
 ### Use export to share a code block
 
+export syntax is also known as ```named export```.
 One way to export a code block is shown below.
 Assume that there is a file named ```math_functions.js```
 
@@ -788,3 +789,48 @@ import * as myMathModule from "./math_functions.js";
 - The above command will import all of the exported contents from 'math_functions.js' and into an object called 'myMathModule'.
 - NOTE: Only contents that have been exported will be imported.
 - The object name (in this case, myMathModule), can be named anything. It is just a variable name.
+
+
+### Export default and Importing a default export
+
+- Another export syntax is known as ```export default```
+- This is usually used if only one value is being exported from a file.
+- It is also used to create a 'fallback' value for a file or a module.
+
+```js
+export default function add(x, y) {   // Named function
+  return x + y;
+}
+
+
+export default function(x, y) {       // Anonymous function
+  return x + y;
+}
+```
+
+- export default needs to be exported on its own. It cannot be combined with other named exports.
+- Once exported, it is possible to import the exported contents in a single module.
+
+```js
+export default function add(a,b) {
+  return a + b;
+}
+
+export function subtract(a,b) {
+  return a - b;
+}
+
+export function multiply(a,b) {
+  return a * b;
+}
+
+// The above exports can be imported in a single module
+
+import add { subtract, multiply } from './myModule.js';  
+// Notice that the default export is not contained in the curly braces
+// Named exports must be wrapped with '{}'.
+```
+
+- The purpose of 'export default' is to make it easier and more intuitive to import a single value from a module.
+  - For example, 'export default' to export the most frequently used functions as the default export.
+

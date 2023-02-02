@@ -135,6 +135,7 @@ therefore
 const increment = (number, value = 1) => number + value;
 
 console.log(increment(5)); // console will display 6.
+```
 
 ### Rest Parameters (requires further understanding)
 
@@ -155,6 +156,50 @@ const sum (...args) => {
       return args.reduce((a, b) => a + b, 0);
 }
 ```
+
+#### Side-note on array methods
+
+
+Array methods have appeared in the module, but I haven't seen any detailed introduction on these methods.
+So here it is.
+Array methods such as map(), filter(), and reduce() are used to manipulate arrays in different ways.
+
+##### map()
+
+- map() is used to create a new array with the results of calling a specified function on EVERY element in the array that is called.
+- The new array will have the same length as the original array.
+- The new elements in the new array will be the result of the call back function applied to the original array elements.
+
+```js
+let numbers = [1, 2, 3, 4, 5];
+let squaredNumbers = numbers.map(x => x * x); // x represents each element in the array. x will multiply itself by itself for each element and produce a new array
+console.log(squaredNumbers);                  // console will display [1, 4, 9, 16, 25]
+```
+
+##### filter()
+
+- filter() is used to create a new array with all elements that pass the test implemented by the provided function on the original array.
+- The new array will only contain elements for which the callback function returns a 'true' response.
+
+```js
+let numbers = [1, 2, 3, 4, 5];                      // The filter method will iterate through the array and find the remainder of the value when divided by 2.
+let evenNumbers = numbers.filter(x => x % 2 === 0); // if the remainder strictly equals 0, it will pass the function to be added to the new array.
+console.log(evenNumbers);                           // console will display [2, 4]
+```
+
+##### reduce()
+
+- reduce() is used to apply a function to all of the elements in the array and REDUCE it to a single value.
+- The function takes two arguments: an accumulator ( the value accumulated so far), and the current value (the element being processed in the array)
+
+```js
+let numbers = [1, 2, 3, 4, 5]; 
+// the reduce function will start at '0' as specified at the end of the parentheses. It will iterate through the array and accumulate the sum of each element in the array. [(3) + [3, 4, 5]] then [(6) + [4, 5]], [(10) + [5]], etc.           
+let sum = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log(sum);     // console will display the sum of all of the elements in the array.
+```
+
+
 
 ### Spread Operator
 

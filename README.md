@@ -119,6 +119,23 @@ const greeting = (name = "Anonymous") => "Hello " + name;
 - ```console.log(greeting("Josh"));``` will display "Hello Josh", whereas ```console.log(greeting())``` will display "Hello Anonymous".
 - You can set as many default values for as many parameters as needed.
 
+Another example
+
+- Modify the function 'increment' by adding default parameters so that it will add 1 to 'number' if value is not specified.
+
+```js
+const increment = (number, value) => number + value;
+```
+
+- If the default value of 'value' parameter is set to 1, the function will execute ```number + 1 (default)``` when value is not specified.
+
+therefore
+
+```js
+const increment = (number, value = 1) => number + value;
+
+console.log(increment(5)); // console will display 6.
+
 ### Rest Parameters (requires further understanding)
 
 - Rest parameters allow you to create functions that take a variable number of arguments, which are stored in an array that can be recalled from the function later.

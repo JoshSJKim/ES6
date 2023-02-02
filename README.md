@@ -790,7 +790,6 @@ import * as myMathModule from "./math_functions.js";
 - NOTE: Only contents that have been exported will be imported.
 - The object name (in this case, myMathModule), can be named anything. It is just a variable name.
 
-
 ### Export default and Importing a default export
 
 - Another export syntax is known as ```export default```
@@ -834,3 +833,122 @@ import add { subtract, multiply } from './myModule.js';
 - The purpose of 'export default' is to make it easier and more intuitive to import a single value from a module.
   - For example, 'export default' to export the most frequently used functions as the default export.
 
+### JavaScript Promise
+
+- Promise function is a constructor function.
+- 'new' keyword is required to create a promise.
+- It takes a function as its argument with two parameters - resolve and reject.
+
+This is the syntax
+
+```js
+const makeServerRequest = new Promise((resolve, reject) => {});
+```
+
+- Promise has three states: pending, fulfilled, and rejected.
+- The 'makeServerRequest' created above is forever stuck in the pending state because a way to complete the promise has not been defined.
+- The resolve and reject parameters are used to determine if the promise is fulfilled or rejected.
+
+#### complete a promise with resolve/reject
+
+```js
+const makeServerRequest = new Promise((resolve, reject) => {
+    let responseFromServer;
+
+    if(responseFromServer) {
+      resolve("We got the data");
+    } else {
+      reject("Data not received");
+  }
+});
+```
+
+- 'responseFromServer' represents a response from a server, such as 'true' or 'false'.
+- The 'if' statement will take the response 'true' or 'false'.
+- if 'true', resolve method will be used to pass the string "We got the data"
+- if 'false', reject method will be used to pass the string "Data not received"
+
+#### Handle fulfilled promise with 'then'
+
+- In the example above, makeServerRequest is waiting for a response from a server.
+- if the response is true, the promise function will be resolved, and if false, it will be rejected.
+- Once it receives a response from a server, something needs to be done with the response to complete the promise function
+
+The 'then' method is used to complete the promise function.
+
+```js
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer;
+
+  if(responseFromServer) {
+    resolve("We got the data") {
+    } else {
+    reject("Data not received");
+    }
+  }
+});
+
+makeServerRequest.then((result) => {
+  console.log(result);
+});
+```
+
+- NOTE: the 'then' method is entered outside of the promise function.
+- Once a response if received from a server, let's say 'true', the 'resolve' method will be called with the string "We got the data". It indicates that the promise has been fulfilled.
+- When the promise is fulfilled, the 'then' method takes a callback function as its parameter (in this case, 'result').
+- The callback function ```makeServerRequest.then((result)``` takes the resolved value of the promise ("We got the data") as its parameter and logs it into the console.
+
+##### Side-note on arrow function
+
+- Arrow function requires that the argument list be wrapped in parentheses if there is only one argument.
+- If there are no arguments, empty parentheses are still required.
+- curly braces '{}' must be used to define the body of the function.
+- 'then' method does not require curly braces if the code block within is a single statement.
+  - However, if there are multiple statements within the code block, curly braces are required to separate the statements.
+- in general, it is recommended to use curly braces at all times.
+
+```js
+makeServerRequest.then((result) => {  // argument list wrapped in parentheses. Curly braces used
+  console.log(result);
+});
+
+or 
+
+makeServerRequest.then((result) => console.log(result)); // curly braces removed. Acceptable for single statement within code block, but not recommended.
+```
+
+### Handle a rejected promise with Catch
+
+- Up to this point, the promise function received a response, true, from the server, and using the 'then' method, took a callback function 'return' as its parameter.
+- The callback function then t took the resolved value of the promise as its parameter to log it into the console "We got the data".
+
+How about when the server returns 'false' as a response?
+
+- The code above is capable of receiving a response 'false', but it has no means of handling the response, hence it is not able to display it into the console.
+- In the same manner the 'then' method was used, the 'catch' method is used when the promise is rejected.
+- It is executed immediately after a promise 'reject' is called due to receiving a 'false' response from the server.
+- The syntax is exactly the same as 'then'. Just replace it with 'catch'.
+
+```js
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer;
+
+  if(responseFromServer) {
+    resolve("We got the data") {
+    } else {
+    reject("Data not received");
+    }
+  }
+});
+
+makeServerRequest.then((result) => {
+  console.log(result);
+});
+makeServerRequest.catch((error) => {
+  console.log(error);
+});
+```
+
+- The callback function parameter (result, error) are arbitrary and can be set to anything within the context of the code.
+- As soon as 'false' is received, the reject method will be called with the string "Data not received".
+- Then, the 'catch' method will take the callback function 'error', which will take the 'reject' value ("Data not received") as its parameter to log it into the console.

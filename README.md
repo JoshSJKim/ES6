@@ -159,7 +159,6 @@ const sum (...args) => {
 
 #### Side-note on array methods
 
-
 Array methods have appeared in the module, but I haven't seen any detailed introduction on these methods.
 So here it is.
 Array methods such as map(), filter(), and reduce() are used to manipulate arrays in different ways.
@@ -199,7 +198,17 @@ let sum = numbers.reduce((acc, curr) => acc + curr, 0);
 console.log(sum);     // console will display the sum of all of the elements in the array.
 ```
 
+There are other array methods commonly used in JavaScript
 
+- concat(): concatenates two or more arrays into a new array
+- slice(): returns a shallow copy of a portion of an array into a new array
+- splice(): adds/removes elements from an array
+- indexOf(): returns the first index at which a given element can be found in the array
+- lastIndexOf(): returns the last index at which a given element can be found in the array
+- join(): joins all elements of an array into a string
+- reverse(): reverses the order of elements in an array
+- sort(): sorts the elements of an array in place and returns the sorted array
+- forEach(): executes a provided function once for each array element
 
 ### Spread Operator
 

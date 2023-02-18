@@ -118,7 +118,7 @@ const myFunc = function() {
 }
 ```
 
-- The above code can be simplified by replacing the 'function' text to an arrow (=>) behind the brackets, as shown below.
+- The above code can be simplified by replacing the 'function' text to an arrow (=>) behind the parentheses, as shown below.
 
 ```JS
 const myFunc = () => {

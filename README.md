@@ -260,9 +260,11 @@ console.log(evenNumbers);                           // console will display [2, 
 
 ```js
 let numbers = [1, 2, 3, 4, 5]; 
-// the reduce function will start at '0' as specified at the end of the parentheses. It will iterate through the array and accumulate the sum of each element in the array. [(3) + [3, 4, 5]] then [(6) + [4, 5]], [(10) + [5]], etc.           
+// the reduce function will start at index '0' as specified at the end of the parentheses.
+// It will iterate through the array and accumulate the sum of each element in the array.
+// [(3) + [3, 4, 5]] then [(6) + [4, 5]], [(10) + [5]], etc.           
 let sum = numbers.reduce((acc, curr) => acc + curr, 0);
-console.log(sum);     // console will display the sum of all of the elements in the array.
+console.log(sum);     // console will display the sum of all of the elements in the array. [15]
 ```
 
 There are other array methods commonly used in JavaScript
@@ -276,6 +278,8 @@ There are other array methods commonly used in JavaScript
 - reverse(): reverses the order of elements in an array
 - sort(): sorts the elements of an array in place and returns the sorted array
 - forEach(): executes a provided function once for each array element
+
+- I'm sure I'll need to dive deeper into these later on.
 
 ### Spread Operator
 

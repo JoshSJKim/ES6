@@ -28,8 +28,25 @@ function checkScope() {
 
 ### Mutate an array declared with const
 
+- Remember, variables declared with 'const' keyword are read-only.
+- But that doesn't mean that the contents of the value assigned to the variable declared with 'const' cannot be modified.
+- Using the 'const' declaration only prevents "reassignment" of the variable identifier.
+
+```js
+const s = [5, 6, 7];
+s = [1, 2, 3];  // This line will throw a TypeError. s is read-only. It cannot be reassigned with a new value or object.
+```
+
+```js
+const s = [5, 6, 7];
+s[2] = 45;  // This is different from reassigning a value to a variable since it's accessing an index point in the array to change the element value.
+console.log(s); // [5, 6, 45]
+```
+
 - Edit the array [5, 7, 2] to [2, 5, 7]
-- There are various ways to achieve this. You could manually assign new values to each element of the array by indexing the array. I think this is the intended method for this exercise.
+- There are various ways to achieve this.
+- You could manually assign new values to each element of the array by indexing the array.
+- I think this is the intended method for this exercise.
 
 ```JS
 const s = [5, 7, 2];
@@ -53,10 +70,22 @@ editInPlace();
 ```
 
 - s.pop() will remove the last element of the array.
-- s.unshift(2) will enter the value '2' to the first element of the array (index[0]).
-- There may be other methods to achieve this, but these are the only two that I know.
+- s.unshift(2) will enter the value '2' to the first element of the array (index s[0]).
 
-#### Object Freeze
+Another method
+
+```js
+const s = [5, 7, 2];
+function editInPlace() {
+  // initialize variable 'removed' and assign it the value of removing the last value of the array 's'. The value will be stored in the call stack
+  let removed = s.pop();
+  // unshift (insert at index 0) the removed value to array 's'
+  s.unshift(removed);       
+}
+editInPlace;
+```
+
+### Object Freeze
 
 - Prevent object data mutation by applying ```Object.freeze('object_name');```
 

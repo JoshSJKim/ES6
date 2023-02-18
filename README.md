@@ -178,9 +178,10 @@ const myConcat = (arr1, arr2) => arr1.concat(arr2);
 
 ```JS
 const greeting = (name = "Anonymous") => "Hello " + name;
+console.log(greeting("Josh"));  // console will display "Hello Josh"
+console.log(greeting());  // console will display "Hello Anonymous"
 ```
 
-- ```console.log(greeting("Josh"));``` will display "Hello Josh", whereas ```console.log(greeting())``` will display "Hello Anonymous".
 - You can set as many default values for as many parameters as needed.
 
 Another example
@@ -216,10 +217,12 @@ const sum = (x, y, z) => {
 - Using rest parameters, the above code can be written as shown below.
 
 ```JS
-const sum (...args) => {
-      return args.reduce((a, b) => a + b, 0);
-}
+const sum (...args) =>  args.reduce((a, b) => a + b, 0);
 ```
+
+- You can think of the rest parameter as a ```blanket parameter```
+- You will still need to define the function with at least one argument. (In the above code, it's 'args')
+- Naming the parameter is arbitrary.
 
 #### Side-note on array methods
 

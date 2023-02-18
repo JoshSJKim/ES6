@@ -135,10 +135,31 @@ const myFunc = () => "value";
 
 ### Arrow function with parameters
 
+- You can pass arguments into an arrow function
+
+```js
+const doubler = (item) => item * 2;
+doubler(4); // This would return 8
+```
+
+- If an arrow function has a single parameter, the parentheses can be omitted.
+
+```js
+const double = item => item * 2; // This is identical to the code above
+```
+
+- You can pass multiple arguments to an arrow function
+
+```js
+const multiplier = (item, multi) => item * multi;
+multiplier(4, 2); // This would return 8
+```
+
 ```JS
 var myConcat = function(arr1, arr2) {
   return arr1.concat(arr2);
 };
+console.log(myConcat([1, 2], [3, 4, 5]));
 ```
 
 - The above code (written using ES5 syntax) can be re-written using arrow functions.

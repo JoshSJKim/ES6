@@ -8,17 +8,17 @@
 
 - Run through NO.2!
 
-### Variable scope
+### Compare scope
 
 ```JS
 function checkScope() {
-    let i = 'function scope';
+    let i = 'function scope';   // This variable is declared outside of the 'if' block
     if (true) {
-        let i = 'block scope';
-        console.log('block scope i is: ', i);
+        let i = 'block scope';  // This variable is declared inside of the 'if' block
+        console.log('block scope i is: ', i); // block scope 'i' is visible only inside of the 'if' block
     }
-    console.log('function scope i is: ', i);
-    return i;
+    console.log('function scope i is: ', i);  // function scope 'i' is visible only outside of the 'if' block
+    return i;   // this command will return 'function scope i' since it's placed outside of the 'if' block
 }
 ```
 

@@ -294,6 +294,13 @@ let arr2;
 arr2 = [...arr1] // This is the spread operator
 ```
 
+or it can be written like so
+
+```js
+const arr1 = [1, 2, 3, 4, 5];
+let arr2 = [...arr1];
+```
+
 - ```arr2 = [...arr1]``` will 'unpack' the elements of arr1 and insert it into arr2. ```console.log(arr2);``` will display the exact same array as arr1.
 
 ### Destructuring assignment to extract values from objects

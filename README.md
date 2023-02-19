@@ -567,6 +567,14 @@ const half = ({max, min}) => (max + min) / 2.0;
 - Except when I get to challenges and I have no clue as to where to even begin.
 - I need to expose myself to practical challenges and practices in terms of using JavaScript
 
+- Another thing is terminology.
+- I'm still not very familiar with 'coding lingo'.
+- I just encountered "Use any iterator method" and had no idea what it was talking about.
+- I found out it meant any loops to iterate through arrays, which I do understand.
+- I am having trouble connecting the terminologies.
+- Maybe a bootcamp in the future may help me get more acquainted.
+- I need more exposure to the environment.
+
 ### Create strings using template literals (requires further understanding)
 
 INSTRUCTIONS

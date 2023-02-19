@@ -737,6 +737,28 @@ const createPerson = (name , age, gender) => ({
 
 ### Concise declarative functions
 
+- In ES5, keyword 'function' is required to create a function
+
+```js
+const person = {
+  name: "Taylor",
+  sayHello: function() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+```
+
+- In ES6, you can remove the keyword 'function' and the colon when defining functions in objects
+
+```js
+const person = {
+  name: "Taylor",
+  sayHello() {  // The rest of the code is the same, but the colon and the keyword 'function' have been removed
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+```
+
 INSTRUCTION
 
 Refactor the function setGear inside the object bicycle to use the shorthand declarative shorthand syntax.
@@ -767,9 +789,11 @@ const bicycle = {
     this.gear = newGear;
   }
 };
+bicycle.setGear(3);
+console.log(bicycle.gear);
 ```
 
-The above two codes will display exactly the same output.
+- The above two codes will display exactly the same output.
 
 ### Use class syntax to define a constructor function (requires further understanding)
 

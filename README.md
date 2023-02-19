@@ -859,6 +859,17 @@ atlas.blastOff(); // This will print "To Mars!" in the console
 
 - Keep in mind when defining the class, UpperCamelCase should be used.
 
+```js
+class Vegetable {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name);
+```
+
 ### Getters and Setters
 
 - Getter functions are used to return (get) the value of an object's private variable to the user without the user directly accessing the private variable.

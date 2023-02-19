@@ -883,7 +883,7 @@ class Book {                // Define class, UpperCamelCase
   }    
   get writer() {            // This is the getter
     return this._author;    // The value of the private variable that will be returned when the get function is called
-  }/
+  }
   set writer(updatedAuthor) {       // This is the setter
     this._author = updatedAuthor;   // The value of the private variable will be updated based on the argument passed.
   }
@@ -891,7 +891,7 @@ class Book {                // Define class, UpperCamelCase
 
 const novel = new Book('anonymous');  // 'new' keyword creates an instance of the 'Book' class and passes 'anonymous' as the argument to the constructor
 console.log(novel.writer);            // This will display 'anonymous' since 'this._author' was set to 'anonymous' for 'const novel' above.
-novel.writer = 'newAuthor';           // This will pass the argument 'newAuthor' to the 'updateAuthor' parameter for 'set writer' setter function.
+novel.writer = 'newAuthor';           // This will pass the argument 'newAuthor' to the 'updatedAuthor' parameter for 'set writer' setter function.
 console.log(novel.writer);            // This will display 'newAuthor' since 'this._author' was updated to 'newAuthor' using the setter above.
 ```
 
@@ -929,7 +929,7 @@ temp = thermos.temperature; // new fahrenheit value is assigned to 'this._fahren
   - it is actually converting the celcius value to fahrenheit, returned to 'this._fahrenheit', and when called again using the get function, it is then re-converted to celcius. Then 'temp = thermos.temperature' will be '26' in celcius again.
   - It seems redundant but it actually makes sense because the constructor is defined to receive arguments in fahrenheit.
 
-## Create a Module Script - integrate JavaScript with HTML
+### Create a Module Script - integrate JavaScript with HTML
 
 ```html
 <html>

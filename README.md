@@ -556,6 +556,9 @@ const half = ({max, min}) => (max + min) / 2.0;
 - Then it will return the sum of the values of the 'max' and 'min' properties and divide it by 2 to get the average. (Right side)
 - ```console.log(half(stats))``` will display 28.015.
 
+- The most confusing part of destructuring is that it doesn't need to specify the object in the function.
+  - Once the function is called with the object as its parameter, it will look through the object with the properties specified in the function.
+
 ### Create strings using template literals (requires further understanding)
 
 INSTRUCTIONS

@@ -943,7 +943,6 @@ temp = thermos.temperature; // new fahrenheit value is assigned to 'this._fahren
 
 export syntax is also known as ```named export```.
 One way to export a code block is shown below.
-Assume that there is a file named ```math_functions.js```
 
 ```js
 export const add = (x, y) => {  // This will export the 'add' function, which takes two arguments and return the sum of the two arguments

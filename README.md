@@ -631,15 +631,13 @@ const result = {
   failure: ["no-var", "var-on-top", "linebreak"],
   skipped: ["no-extra-semi", "no-dup-keys"]
 };
-function makeList(arr) {
-  // Only change code below this line
-  const failureItems = [];
-  for (let i = 0; i < arr.length; i++) {
+function makeList(arr) {    // create function 'makeList' which takes an array as its parameter
+  const failureItems = [];      // initialize const variable 'failureItems' with empty string as its value
+  for (let i = 0; i < arr.length; i++) {    // setup the 'for' loop to begin at index 0 and increment by 1 for the length of the array
+    // push each array element wrapped in <li></li> tags using template literal into empty array 'failureItems'
     failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
   }
-  // Only change code above this line
-
-  return failureItems;
+  return failureItems;  // after iterating through the array 'result.failure', return the result.
 }
 
 const failuresList = makeList(result.failure);

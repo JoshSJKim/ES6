@@ -1096,7 +1096,7 @@ makeServerRequest.then((result) => {
 - NOTE: the 'then' method is entered outside of the promise function.
 - Once a response if received from a server, let's say 'true', the 'resolve' method will be called with the string "We got the data". It indicates that the promise has been fulfilled.
 - When the promise is fulfilled, the 'then' method takes a callback function as its parameter (in this case, 'result').
-- The callback function ```makeServerRequest.then((result)``` takes the resolved value of the promise ("We got the data") as its parameter and logs it into the console.
+- The callback function ```makeServerRequest.then(result)``` takes the resolved value of the promise ("We got the data") as its parameter and logs it into the console.
 
 ##### Side-note on arrow function
 

@@ -559,6 +559,14 @@ const half = ({max, min}) => (max + min) / 2.0;
 - The most confusing part of destructuring is that it doesn't need to specify the object in the function.
   - Once the function is called with the object as its parameter, it will look through the object with the properties specified in the function.
 
+## NOTE TO SELF
+
+- The biggest challenge in understanding JavaScript at the moment is "What to use in which situation"
+- I am intaking a flood of information but as for its application, I have no clue.
+- It seems fine when I am going through the modules because the context is provided for me.
+- Except when I get to challenges and I have no clue as to where to even begin.
+- I need to expose myself to practical challenges and practices in terms of using JavaScript
+
 ### Create strings using template literals (requires further understanding)
 
 INSTRUCTIONS
@@ -585,7 +593,7 @@ const failuresList = makeList(result.failure);
 ```
 
 - The above function 'makeList(arr)' already has a variable 'failureItems' declared with an empty array.
-- Use a 'for loop' to iterate through the object 'results'
+- Use a 'for loop' to iterate through the object 'results' (An example of 'iterator method')
   
   ```js
   for (let i = 0; i < arr.length; i++) 
